@@ -2,7 +2,7 @@
 
 > jQuery DataTables, Dotnet Core & NuxtJs Play Nice
 
-his project demonstrates how to make NuxtJs work with jQuery Datatables.
+This project demonstrates how to make NuxtJs work with jQuery Datatables.
 
 It also demonstrates how to do a **Real-time** update to the Datatable.
 
