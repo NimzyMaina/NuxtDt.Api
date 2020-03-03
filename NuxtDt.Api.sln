@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{82F90EF9-F177-4563-824C-130CE11F1FC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuxtDt.Api", "src\NuxtDt.Api\NuxtDt.Api.csproj", "{77AA734E-8A87-4B37-B9CC-C26A68389BCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77AA734E-8A87-4B37-B9CC-C26A68389BCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77AA734E-8A87-4B37-B9CC-C26A68389BCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77AA734E-8A87-4B37-B9CC-C26A68389BCE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{77AA734E-8A87-4B37-B9CC-C26A68389BCE}.Debug|x64.Build.0 = Debug|Any CPU
+		{77AA734E-8A87-4B37-B9CC-C26A68389BCE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{77AA734E-8A87-4B37-B9CC-C26A68389BCE}.Debug|x86.Build.0 = Debug|Any CPU
+		{77AA734E-8A87-4B37-B9CC-C26A68389BCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77AA734E-8A87-4B37-B9CC-C26A68389BCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77AA734E-8A87-4B37-B9CC-C26A68389BCE}.Release|x64.ActiveCfg = Release|Any CPU
+		{77AA734E-8A87-4B37-B9CC-C26A68389BCE}.Release|x64.Build.0 = Release|Any CPU
+		{77AA734E-8A87-4B37-B9CC-C26A68389BCE}.Release|x86.ActiveCfg = Release|Any CPU
+		{77AA734E-8A87-4B37-B9CC-C26A68389BCE}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{77AA734E-8A87-4B37-B9CC-C26A68389BCE} = {82F90EF9-F177-4563-824C-130CE11F1FC7}
+	EndGlobalSection
+EndGlobal
