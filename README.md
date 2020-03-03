@@ -10,8 +10,14 @@ It also demonstrates how to do a **Real-time** update to the Datatable.
 
 The client side of this project can be found at [NuxtDt Client Side](https://www.github.com/NimzyMaina/nuxtdt)
 
-## Screen Shot
+## Screenshots
+### Basic Example
+
 ![alt tag](https://raw.github.com/NimzyMaina/nuxtDt/master/media/nuxtDt.png)
+
+### Server Side Example
+
+![alt tag](https://raw.github.com/NimzyMaina/nuxtDt/master/media/nuxtDt-server.png)
 
 ## Build Setup
 
