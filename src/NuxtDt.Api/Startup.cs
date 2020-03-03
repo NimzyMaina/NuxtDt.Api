@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using NuxtDt.Api.Hubs;
 using NuxtDt.Api.Models;
 using NuxtDt.Api.Persistence;
 
@@ -29,11 +30,8 @@ namespace NuxtDt.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowAll",
-                    builder => { builder.AllowAnyOrigin().AllowAnyHeader(); });
-            });
+            services.AddCors();
+            services.AddSignalR();
             services.RegisterDataTables();
             services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase(databaseName: "NuxtDt.Api"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -52,7 +50,18 @@ namespace NuxtDt.Api
                 app.UseHsts();
             }
             
-            app.UseCors("AllowAll"); 
+            app.UseCors(builder =>
+                builder
+                    .WithOrigins("http://localhost:3000")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials()
+            ); 
+            // SignalR
+            app.UseSignalR(route =>
+            {
+                route.MapHub<EmployeesHub>("/employees-hub");
+            });
 
             app.UseMvc();
         }
