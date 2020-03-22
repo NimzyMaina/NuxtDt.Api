@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +6,6 @@ using DataTables.AspNet.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using NuxtDt.Api.Dtos;
 using NuxtDt.Api.Extensions;
 using NuxtDt.Api.Hubs;
@@ -35,11 +33,12 @@ namespace NuxtDt.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Get([FromForm]IDataTablesRequest request)
         {
-            int filteredDataCount = 0;
-            List<Employees> data = await _context.Employees.ToListAsync();
-            var dataPage = data.Compute(request, out filteredDataCount);
-            var response = DataTablesResponse.Create(request, data.Count, filteredDataCount, dataPage);
-            return new DataTablesJsonResult(response, true);
+            var dataPage = _context.Employees
+//                .Where(e => e.Age < 30) // ==> In case you need to do a custom query
+//                .AsEnumerable() // ==> **Important**
+                .Compute(request, out var filteredDataCount);
+            var response = DataTablesResponse.Create(request, dataPage.Count(), filteredDataCount, dataPage);
+            return await Task.FromResult(new DataTablesJsonResult(response, true));
         }
 
 
